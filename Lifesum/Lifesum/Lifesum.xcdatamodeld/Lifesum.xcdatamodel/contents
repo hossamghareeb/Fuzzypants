@@ -3,22 +3,24 @@
     <entity name="Category" syncable="YES">
         <attribute name="lastUpdatedDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="oid" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <relationship name="foods" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Food" syncable="YES"/>
-        <relationship name="translations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CategoryTranslation" syncable="YES"/>
+        <relationship name="foods" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Food" inverseName="category" inverseEntity="Food" syncable="YES"/>
+        <relationship name="translations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CategoryTranslation" inverseName="category" inverseEntity="CategoryTranslation" syncable="YES"/>
     </entity>
     <entity name="CategoryTranslation" syncable="YES">
         <attribute name="languageISO" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="translations" inverseEntity="Category" syncable="YES"/>
     </entity>
     <entity name="Exercise" syncable="YES">
-        <attribute name="calories" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="calories" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="lastUpdatedDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="oid" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <relationship name="translations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExerciseTranslation" syncable="YES"/>
+        <relationship name="translations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExerciseTranslation" inverseName="exercise" inverseEntity="ExerciseTranslation" syncable="YES"/>
     </entity>
     <entity name="ExerciseTranslation" syncable="YES">
         <attribute name="languageISO" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="exercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="translations" inverseEntity="Exercise" syncable="YES"/>
     </entity>
     <entity name="Food" syncable="YES">
         <attribute name="gramsPerServing" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -27,7 +29,8 @@
         <attribute name="oid" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="pcstext" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="nutritionFacts" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NutritionFacts" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="foods" inverseEntity="Category" syncable="YES"/>
+        <relationship name="nutritionFacts" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NutritionFacts" inverseName="food" inverseEntity="NutritionFacts" syncable="YES"/>
     </entity>
     <entity name="NutritionFacts" syncable="YES">
         <attribute name="calories" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -41,13 +44,14 @@
         <attribute name="sodium" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="sugar" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="unsaturatedFats" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="food" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Food" inverseName="nutritionFacts" inverseEntity="Food" syncable="YES"/>
     </entity>
     <elements>
         <element name="Exercise" positionX="-407" positionY="54" width="128" height="103"/>
-        <element name="ExerciseTranslation" positionX="-54" positionY="9" width="128" height="75"/>
+        <element name="ExerciseTranslation" positionX="-54" positionY="9" width="128" height="88"/>
         <element name="Category" positionX="-369" positionY="207" width="128" height="103"/>
-        <element name="CategoryTranslation" positionX="-522" positionY="423" width="128" height="75"/>
-        <element name="Food" positionX="-119" positionY="387" width="128" height="148"/>
-        <element name="NutritionFacts" positionX="-342" positionY="519" width="128" height="210"/>
+        <element name="CategoryTranslation" positionX="-522" positionY="423" width="128" height="88"/>
+        <element name="Food" positionX="-119" positionY="387" width="128" height="163"/>
+        <element name="NutritionFacts" positionX="-342" positionY="519" width="128" height="223"/>
     </elements>
 </model>

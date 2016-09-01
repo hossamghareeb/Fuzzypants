@@ -16,6 +16,9 @@
 		067F1D381D776B3400ADAE0D /* categoriesStatic.json in Resources */ = {isa = PBXBuildFile; fileRef = 067F1D351D776B3400ADAE0D /* categoriesStatic.json */; };
 		067F1D391D776B3400ADAE0D /* exercisesStatic.json in Resources */ = {isa = PBXBuildFile; fileRef = 067F1D361D776B3400ADAE0D /* exercisesStatic.json */; };
 		067F1D3A1D776B3400ADAE0D /* foodStatic.json in Resources */ = {isa = PBXBuildFile; fileRef = 067F1D371D776B3400ADAE0D /* foodStatic.json */; };
+		067F1D421D783D1300ADAE0D /* AbstractDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067F1D411D783D1300ADAE0D /* AbstractDataLoader.swift */; };
+		067F1D441D783FD300ADAE0D /* ExercisesDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067F1D431D783FD300ADAE0D /* ExercisesDataLoader.swift */; };
+		067F1D461D784AE200ADAE0D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067F1D451D784AE200ADAE0D /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		067F1D351D776B3400ADAE0D /* categoriesStatic.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categoriesStatic.json; sourceTree = "<group>"; };
 		067F1D361D776B3400ADAE0D /* exercisesStatic.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = exercisesStatic.json; sourceTree = "<group>"; };
 		067F1D371D776B3400ADAE0D /* foodStatic.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = foodStatic.json; sourceTree = "<group>"; };
+		067F1D411D783D1300ADAE0D /* AbstractDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractDataLoader.swift; sourceTree = "<group>"; };
+		067F1D431D783FD300ADAE0D /* ExercisesDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercisesDataLoader.swift; sourceTree = "<group>"; };
+		067F1D451D784AE200ADAE0D /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,9 @@
 		067F1D1E1D77646E00ADAE0D /* Lifesum */ = {
 			isa = PBXGroup;
 			children = (
+				067F1D3B1D77770200ADAE0D /* Controllers */,
+				067F1D3C1D77770200ADAE0D /* Model */,
+				067F1D3D1D77770200ADAE0D /* View */,
 				067F1D1F1D77646E00ADAE0D /* AppDelegate.swift */,
 				067F1D211D77646E00ADAE0D /* ViewController.swift */,
 				067F1D231D77646E00ADAE0D /* Main.storyboard */,
@@ -82,6 +91,38 @@
 				067F1D371D776B3400ADAE0D /* foodStatic.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		067F1D3B1D77770200ADAE0D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		067F1D3C1D77770200ADAE0D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				067F1D3E1D77777D00ADAE0D /* DataLoading */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		067F1D3D1D77770200ADAE0D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		067F1D3E1D77777D00ADAE0D /* DataLoading */ = {
+			isa = PBXGroup;
+			children = (
+				067F1D411D783D1300ADAE0D /* AbstractDataLoader.swift */,
+				067F1D431D783FD300ADAE0D /* ExercisesDataLoader.swift */,
+				067F1D451D784AE200ADAE0D /* DataManager.swift */,
+			);
+			path = DataLoading;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,7 +200,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				067F1D221D77646E00ADAE0D /* ViewController.swift in Sources */,
+				067F1D461D784AE200ADAE0D /* DataManager.swift in Sources */,
+				067F1D421D783D1300ADAE0D /* AbstractDataLoader.swift in Sources */,
 				067F1D201D77646E00ADAE0D /* AppDelegate.swift in Sources */,
+				067F1D441D783FD300ADAE0D /* ExercisesDataLoader.swift in Sources */,
 				067F1D281D77646E00ADAE0D /* Lifesum.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
