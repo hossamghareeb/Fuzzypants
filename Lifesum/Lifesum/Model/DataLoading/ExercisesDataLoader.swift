@@ -61,4 +61,11 @@ class ExercisesDataLoader: AbstractDataLoader {
     override func entityName() -> String {
         return "Exercise"
     }
+    
+    func exercisesWithKeyword(keyword: String) -> [AnyObject] {
+        
+        let code = NSLocale.currentLocale().languageISO
+        let predicate: NSPredicate? = keyword.characters.count == 0 ? nil : NSPredicate(format: "SUBQUERY(translations, $t, $t.languageISO = '\(code)' AND $t.name CONTAINS '\(keyword)').@count > 0", keyword)
+        return allRecords(predicate)
+    }
 }

@@ -70,8 +70,9 @@ class AbstractDataLoader: NSObject {
     }
     
     
-    func allRecords() -> [AnyObject]{
+    func allRecords(predicate: NSPredicate? = nil) -> [AnyObject]{
         let fetchRequest = NSFetchRequest(entityName: entityName())
+        fetchRequest.predicate = predicate
         do{
             let records = try self.managedObjectContext.executeFetchRequest(fetchRequest)
             return records

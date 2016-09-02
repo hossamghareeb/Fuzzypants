@@ -35,6 +35,7 @@
 		06FFCA581D797CCE00211406 /* CategoryDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FFCA571D797CCE00211406 /* CategoryDataLoader.swift */; };
 		06FFCA5B1D79989700211406 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FFCA5A1D79989700211406 /* HomeViewController.swift */; };
 		06FFCA5E1D79A06F00211406 /* ExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FFCA5D1D79A06F00211406 /* ExercisesViewController.swift */; };
+		06FFCA601D79A79600211406 /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FFCA5F1D79A79600211406 /* ExerciseTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		06FFCA571D797CCE00211406 /* CategoryDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDataLoader.swift; sourceTree = "<group>"; };
 		06FFCA5A1D79989700211406 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		06FFCA5D1D79A06F00211406 /* ExercisesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercisesViewController.swift; sourceTree = "<group>"; };
+		06FFCA5F1D79A79600211406 /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				06FFCA5D1D79A06F00211406 /* ExercisesViewController.swift */,
+				06FFCA5F1D79A79600211406 /* ExerciseTableViewCell.swift */,
 			);
 			path = ExercisesViewController;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				06FFCA441D78CF7100211406 /* Category+CoreDataProperties.swift in Sources */,
 				067F1D461D784AE200ADAE0D /* DataManager.swift in Sources */,
 				06FFCA481D78CF7100211406 /* CategoryTranslation.swift in Sources */,
+				06FFCA601D79A79600211406 /* ExerciseTableViewCell.swift in Sources */,
 				06FFCA551D797A3C00211406 /* FoodDataLoader.swift in Sources */,
 				06FFCA4F1D78CF7100211406 /* NutritionFacts+CoreDataProperties.swift in Sources */,
 				067F1D421D783D1300ADAE0D /* AbstractDataLoader.swift in Sources */,

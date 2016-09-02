@@ -51,5 +51,10 @@ class HomeViewController: UIViewController {
             self.toggleShowingViews(true)
         }
     }
+    
+    @IBAction func didClickOnExercises(sender: AnyObject) {
+        self.performSegueWithIdentifier("showExercises", sender: self)
+    }
+    
 
 }
