@@ -7,7 +7,8 @@
 //
 
 import Foundation
-
+import UIKit
+import CoreData
 /**
  
  Abstract class for Data loading in the app.
@@ -15,25 +16,33 @@ import Foundation
  */
 class AbstractDataLoader: NSObject {
 
+    lazy var managedObjectContext: NSManagedObjectContext = {
+        let app = UIApplication.sharedApplication().delegate as! AppDelegate
+        return app.managedObjectContext
+    }()
     
     /// Get the json file name for your data to be parsed. The file name will be appended later with jsonFileDirectoryPath to get the whole file path. Must be overriden by subclasses. 
     /// - Returns: the data json file name.
-    class func jsonFileName() -> String{
+    func jsonFileName() -> String{
         return ""
     }
     
     /// Return the directory path that contains all content json files. Override this function in your subclass to provide another directory than the default one. The defualt one is the main bundle directory.
     /// - Returns: The main bundle directory.
-    class func jsonFileDirectoryPath() -> String{
+    func jsonFileDirectoryPath() -> String{
         
         return NSBundle.mainBundle().bundlePath
     }
     
-    class func parseJsonData(json: AnyObject){
+    func entityName() -> String{
+        return ""
+    }
+    
+    func parseJsonData(json: AnyObject){
         // override by subclasses
     }
     
-    class func startLoadingData() -> AnyObject?{
+    func startLoadingData() -> AnyObject?{
         
         let directoryPath = jsonFileDirectoryPath() as NSString
         let fileName = jsonFileName()
@@ -43,6 +52,7 @@ class AbstractDataLoader: NSObject {
             let data = NSData(contentsOfFile: filePath)
             do{
                 let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                // Start parsing json data. Subclasses will do custom parsing here and any saving to database
                 parseJsonData(json)
                 return json
             }catch{
@@ -55,6 +65,20 @@ class AbstractDataLoader: NSObject {
             print("File doesn't exist at \(filePath)")
         }
         
+        
         return nil
     }
+    
+    
+    func allRecords() -> [AnyObject]{
+        let fetchRequest = NSFetchRequest(entityName: entityName())
+        do{
+            let records = try self.managedObjectContext.executeFetchRequest(fetchRequest)
+            return records
+        }catch{
+            print(error)
+        }
+        return []
+    }
+    
 }

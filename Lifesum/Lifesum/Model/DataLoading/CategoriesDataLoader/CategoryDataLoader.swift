@@ -1,35 +1,35 @@
 //
-//  ExercisesDataLoader.swift
+//  CategoryDataLoader.swift
 //  Lifesum
 //
-//  Created by Hossam Ghareeb on 9/1/16.
+//  Created by Hossam Ghareeb on 9/2/16.
 //  Copyright © 2016 Hossam Ghareeb. All rights reserved.
 //
 
 import UIKit
 import CoreData
-class ExercisesDataLoader: AbstractDataLoader {
+
+class CategoryDataLoader: AbstractDataLoader {
 
     override func jsonFileName() -> String {
-        return "exercisesStatic.json"
+        return "categoriesStatic.json"
     }
     
     override func parseJsonData(json: AnyObject){
-        let exercises = json as! [[String: AnyObject]]
-        for exercise in exercises{
-            parseExerciseObject(exercise)
+        let categories = json as! [[String: AnyObject]]
+        for category in categories{
+            parseCategoryObject(category)
         }
     }
     
-    func parseExerciseObject(json: [String: AnyObject]){
-        
-        let title = json.stringWithKey("title")
-        let calories = json.numberWithKey("calories")
+    func parseCategoryObject(json: [String: AnyObject]){
+
+        let categoryTitle = json.stringWithKey("category")
         let oid = json.numberWithKey("oid")
         let lastupdatedInterval = (json.numberWithKey("lastupdated")).doubleValue
         let date = NSDate(timeIntervalSince1970: lastupdatedInterval)
         
-        let exercise = Exercise.newEntityWithCalories(calories, oid: oid, lastUpdatedDate: date, context: self.managedObjectContext)
+        let category = Category.newEntityWithOid(oid, lastUpdatedDate: date, context: self.managedObjectContext)
         
         let localizedNames = NSMutableSet()
         for key in json.keys where key.containsString("name"){
@@ -39,17 +39,17 @@ class ExercisesDataLoader: AbstractDataLoader {
                 let languageCode = components[1] as String
                 let localizedName = json.stringWithKey(key)
                 
-                let translation = ExerciseTranslation.newEntityWithLanguageISO(languageCode, name: localizedName, context: self.managedObjectContext)
+                let translation = CategoryTranslation.newEntityWithLanguageISO(languageCode, name: localizedName, context: self.managedObjectContext)
                 
                 localizedNames.addObject(translation)
             }
         }
         
         // Let's add the title as translation for English
-        let englishTitle = ExerciseTranslation.newEntityWithLanguageISO("en", name: title, context: self.managedObjectContext)
+        let englishTitle = CategoryTranslation.newEntityWithLanguageISO("en", name: categoryTitle, context: self.managedObjectContext)
         localizedNames.addObject(englishTitle)
         
-        exercise.translations = localizedNames
+        category.translations = localizedNames
         
         do{
             try self.managedObjectContext.save()
@@ -58,7 +58,8 @@ class ExercisesDataLoader: AbstractDataLoader {
         }
     }
     
+    
     override func entityName() -> String {
-        return "Exercise"
+        return "Category"
     }
 }

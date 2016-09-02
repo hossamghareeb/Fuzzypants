@@ -12,13 +12,23 @@ import UIKit
 class DataManager: NSObject {
 
     
-    class func loadAllData(){
+    class func loadAllData(handler: () -> ()){
         
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) { 
             
-            let exercises = ExercisesDataLoader.startLoadingData()
-            //
+            let exerciesesManager = ExercisesDataLoader()
+            exerciesesManager.startLoadingData()
+            let categoriesManager = CategoryDataLoader()
+            categoriesManager.startLoadingData()
+            
+            let foodsManager = FoodDataLoader()
+            foodsManager.startLoadingData()
+                    
+            dispatch_async(dispatch_get_main_queue(), { 
+                
+                handler()
+            })
         }
     }
 }
