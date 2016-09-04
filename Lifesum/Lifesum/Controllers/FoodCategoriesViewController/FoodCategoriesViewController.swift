@@ -26,6 +26,18 @@ class FoodCategoriesViewController: UIViewController {
         self.title = "Categories"
         self.categories = CategoryDataLoader().allRecords() as! [Category]
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == StoryboardConstants.SegueIdOpenFoods {
+            
+            if let indexPath = self.categoriesCollectionView.indexPathsForSelectedItems()?.first{
+                let category = self.categories[indexPath.item]
+                let foodsViewController = segue.destinationViewController as! FoodsViewController
+                foodsViewController.selectedCategory = category
+            }
+            
+        }
+    }
 
 }
 

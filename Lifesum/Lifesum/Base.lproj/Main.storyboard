@@ -230,6 +230,7 @@
                                             <outlet property="categoryImageView" destination="EnO-KE-PRp" id="x7Q-xQ-b0I"/>
                                             <outlet property="categoryLabel" destination="r1R-r7-L2Z" id="ga4-XB-MpK"/>
                                             <outlet property="recipesCountLabel" destination="Rhx-Hl-kiN" id="JJG-Bc-dtz"/>
+                                            <segue destination="qVH-9e-hUC" kind="show" identifier="showFoods" id="coP-E2-ran"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -255,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wbk-ON-Qkp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1517.5" y="702.5"/>
+            <point key="canvasLocation" x="1449.5" y="702.5"/>
         </scene>
         <!--Foods View Controller-->
         <scene sceneID="Mm9-RU-SaQ">
@@ -266,8 +267,59 @@
                         <viewControllerLayoutGuide type="bottom" id="aq1-OX-ttc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KgM-ka-CL2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jgr-Qm-TdB">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="e26-6X-1S3" customClass="FoodTableViewCell" customModule="Lifesum" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e26-6X-1S3" id="3Dz-gP-EaA">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cat0" translatesAutoresizingMaskIntoConstraints="NO" id="A4W-Ck-l6p">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                                </imageView>
+                                                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Faa-ri-ZLx" userLabel="Dim">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ph-ve-Vra">
+                                                    <rect key="frame" x="166" y="40" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5ph-ve-Vra" firstAttribute="centerX" secondItem="3Dz-gP-EaA" secondAttribute="centerX" id="0FE-CB-1j3"/>
+                                                <constraint firstAttribute="trailing" secondItem="A4W-Ck-l6p" secondAttribute="trailing" id="6px-Yn-jZM"/>
+                                                <constraint firstItem="Faa-ri-ZLx" firstAttribute="top" secondItem="3Dz-gP-EaA" secondAttribute="top" id="IdU-54-1da"/>
+                                                <constraint firstItem="A4W-Ck-l6p" firstAttribute="leading" secondItem="3Dz-gP-EaA" secondAttribute="leading" id="JL6-mB-Wap"/>
+                                                <constraint firstAttribute="trailing" secondItem="Faa-ri-ZLx" secondAttribute="trailing" id="TaC-sn-OAH"/>
+                                                <constraint firstAttribute="bottom" secondItem="Faa-ri-ZLx" secondAttribute="bottom" constant="0.5" id="cyL-up-aLA"/>
+                                                <constraint firstAttribute="bottom" secondItem="A4W-Ck-l6p" secondAttribute="bottom" constant="0.5" id="pht-pY-wTw"/>
+                                                <constraint firstItem="Faa-ri-ZLx" firstAttribute="leading" secondItem="3Dz-gP-EaA" secondAttribute="leading" id="rAy-h7-2Dx"/>
+                                                <constraint firstItem="5ph-ve-Vra" firstAttribute="centerY" secondItem="3Dz-gP-EaA" secondAttribute="centerY" id="t8c-D7-nj1"/>
+                                                <constraint firstItem="A4W-Ck-l6p" firstAttribute="top" secondItem="3Dz-gP-EaA" secondAttribute="top" id="tGa-Ee-UfF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="foodImageView" destination="A4W-Ck-l6p" id="pdu-6g-IfG"/>
+                                            <outlet property="foodNameLabel" destination="5ph-ve-Vra" id="6hb-ox-SAz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="qVH-9e-hUC" id="ts9-gB-JOD"/>
+                                    <outlet property="delegate" destination="qVH-9e-hUC" id="9bL-Jn-vvO"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -392,6 +444,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Cat0" width="650" height="400"/>
         <image name="Cat1" width="980" height="552"/>
         <image name="Exercise1" width="736" height="414"/>
         <image name="ExercisesBg" width="1650" height="1100"/>
