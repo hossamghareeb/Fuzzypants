@@ -53,8 +53,11 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func didClickOnExercises(sender: AnyObject) {
-        self.performSegueWithIdentifier("showExercises", sender: self)
+        self.performSegueWithIdentifier(StoryboardConstants.SegueIdOpenExercises, sender: self)
     }
     
 
+    @IBAction func didClickOnFoods(sender: AnyObject) {
+        self.performSegueWithIdentifier(StoryboardConstants.SegueIdOpenFoodCategories, sender: self)
+    }
 }

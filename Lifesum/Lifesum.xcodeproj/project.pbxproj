@@ -18,6 +18,10 @@
 		067F1D421D783D1300ADAE0D /* AbstractDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067F1D411D783D1300ADAE0D /* AbstractDataLoader.swift */; };
 		067F1D441D783FD300ADAE0D /* ExercisesDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067F1D431D783FD300ADAE0D /* ExercisesDataLoader.swift */; };
 		067F1D461D784AE200ADAE0D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067F1D451D784AE200ADAE0D /* DataManager.swift */; };
+		06FC58761D7CA66F00910AF9 /* FoodCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FC58751D7CA66F00910AF9 /* FoodCategoriesViewController.swift */; };
+		06FC58781D7CA6D000910AF9 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FC58771D7CA6D000910AF9 /* Config.swift */; };
+		06FC587A1D7CAA6C00910AF9 /* FoodCategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FC58791D7CAA6C00910AF9 /* FoodCategoryCollectionCell.swift */; };
+		06FC587D1D7CBA3900910AF9 /* FoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FC587C1D7CBA3900910AF9 /* FoodsViewController.swift */; };
 		06FFCA441D78CF7100211406 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FFCA381D78CF7100211406 /* Category+CoreDataProperties.swift */; };
 		06FFCA451D78CF7100211406 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FFCA391D78CF7100211406 /* Category.swift */; };
 		06FFCA461D78CF7100211406 /* CategoryTranslation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FFCA3A1D78CF7100211406 /* CategoryTranslation+CoreDataProperties.swift */; };
@@ -52,6 +56,10 @@
 		067F1D411D783D1300ADAE0D /* AbstractDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractDataLoader.swift; sourceTree = "<group>"; };
 		067F1D431D783FD300ADAE0D /* ExercisesDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercisesDataLoader.swift; sourceTree = "<group>"; };
 		067F1D451D784AE200ADAE0D /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		06FC58751D7CA66F00910AF9 /* FoodCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCategoriesViewController.swift; sourceTree = "<group>"; };
+		06FC58771D7CA6D000910AF9 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		06FC58791D7CAA6C00910AF9 /* FoodCategoryCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCategoryCollectionCell.swift; sourceTree = "<group>"; };
+		06FC587C1D7CBA3900910AF9 /* FoodsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodsViewController.swift; sourceTree = "<group>"; };
 		06FFCA381D78CF7100211406 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		06FFCA391D78CF7100211406 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		06FFCA3A1D78CF7100211406 /* CategoryTranslation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CategoryTranslation+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -112,6 +120,7 @@
 				067F1D2E1D77646E00ADAE0D /* Info.plist */,
 				067F1D261D77646E00ADAE0D /* Lifesum.xcdatamodeld */,
 				067F1D341D776B2700ADAE0D /* Resources */,
+				06FC58771D7CA6D000910AF9 /* Config.swift */,
 			);
 			path = Lifesum;
 			sourceTree = "<group>";
@@ -129,6 +138,8 @@
 		067F1D3B1D77770200ADAE0D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				06FC587B1D7CBA2600910AF9 /* FoodsViewController */,
+				06FC58741D7CA66100910AF9 /* FoodCategoriesViewController */,
 				06FFCA5C1D79A06000211406 /* ExercisesViewController */,
 				06FFCA591D7996DE00211406 /* HomeViewController */,
 			);
@@ -162,6 +173,23 @@
 				067F1D451D784AE200ADAE0D /* DataManager.swift */,
 			);
 			path = DataLoading;
+			sourceTree = "<group>";
+		};
+		06FC58741D7CA66100910AF9 /* FoodCategoriesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				06FC58751D7CA66F00910AF9 /* FoodCategoriesViewController.swift */,
+				06FC58791D7CAA6C00910AF9 /* FoodCategoryCollectionCell.swift */,
+			);
+			path = FoodCategoriesViewController;
+			sourceTree = "<group>";
+		};
+		06FC587B1D7CBA2600910AF9 /* FoodsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				06FC587C1D7CBA3900910AF9 /* FoodsViewController.swift */,
+			);
+			path = FoodsViewController;
 			sourceTree = "<group>";
 		};
 		06FFCA1F1D78CF1100211406 /* DataStructures */ = {
@@ -308,7 +336,10 @@
 				06FFCA5E1D79A06F00211406 /* ExercisesViewController.swift in Sources */,
 				06FFCA5B1D79989700211406 /* HomeViewController.swift in Sources */,
 				06FFCA4C1D78CF7100211406 /* Food+CoreDataProperties.swift in Sources */,
+				06FC58761D7CA66F00910AF9 /* FoodCategoriesViewController.swift in Sources */,
 				06FFCA581D797CCE00211406 /* CategoryDataLoader.swift in Sources */,
+				06FC587A1D7CAA6C00910AF9 /* FoodCategoryCollectionCell.swift in Sources */,
+				06FC58781D7CA6D000910AF9 /* Config.swift in Sources */,
 				06FFCA491D78CF7100211406 /* Exercise.swift in Sources */,
 				06FFCA461D78CF7100211406 /* CategoryTranslation+CoreDataProperties.swift in Sources */,
 				06FFCA4B1D78CF7100211406 /* ExerciseTranslation+CoreDataProperties.swift in Sources */,
@@ -316,6 +347,7 @@
 				067F1D201D77646E00ADAE0D /* AppDelegate.swift in Sources */,
 				067F1D441D783FD300ADAE0D /* ExercisesDataLoader.swift in Sources */,
 				06FFCA471D78CF7100211406 /* Exercise+CoreDataProperties.swift in Sources */,
+				06FC587D1D7CBA3900910AF9 /* FoodsViewController.swift in Sources */,
 				067F1D281D77646E00ADAE0D /* Lifesum.xcdatamodeld in Sources */,
 				06FFCA4D1D78CF7100211406 /* Food.swift in Sources */,
 				06FFCA451D78CF7100211406 /* Category.swift in Sources */,
