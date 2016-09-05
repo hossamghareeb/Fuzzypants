@@ -15,12 +15,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
         self.toggleShowingViews(false)
         loadDataFromDatabase()
-        
-        
     }
     
     private func toggleShowingViews(toShow: Bool){
@@ -32,21 +28,10 @@ class HomeViewController: UIViewController {
         
         DataManager.loadAllData {
             let manager = ExercisesDataLoader()
-            let exercises = manager.allRecords() as! [Exercise]
-            for e in exercises{
-                print(e.title)
-            }
+            _ = manager.allRecords() as! [Exercise]
             
             let catgoriesManager = CategoryDataLoader()
-            let cats = catgoriesManager.allRecords() as! [Category]
-            for cat in cats{
-                print(cat.title)
-                for f in cat.foods!{
-                    let food = f as? Food
-                    print(food?.title)
-                }
-                print("=====================")
-            }
+            _ = catgoriesManager.allRecords() as! [Category]
             
             self.toggleShowingViews(true)
         }

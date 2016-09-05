@@ -36,7 +36,7 @@
 		06FFCA4D1D78CF7100211406 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FFCA411D78CF7100211406 /* Food.swift */; };
 		06FFCA4E1D78CF7100211406 /* NutritionFacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FFCA421D78CF7100211406 /* NutritionFacts.swift */; };
 		06FFCA4F1D78CF7100211406 /* NutritionFacts+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FFCA431D78CF7100211406 /* NutritionFacts+CoreDataProperties.swift */; };
-		06FFCA521D78DFEB00211406 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FFCA511D78DFEB00211406 /* Utils.swift */; };
+		06FFCA521D78DFEB00211406 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FFCA511D78DFEB00211406 /* Extensions.swift */; };
 		06FFCA551D797A3C00211406 /* FoodDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FFCA541D797A3C00211406 /* FoodDataLoader.swift */; };
 		06FFCA581D797CCE00211406 /* CategoryDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FFCA571D797CCE00211406 /* CategoryDataLoader.swift */; };
 		06FFCA5B1D79989700211406 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FFCA5A1D79989700211406 /* HomeViewController.swift */; };
@@ -76,7 +76,7 @@
 		06FFCA411D78CF7100211406 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		06FFCA421D78CF7100211406 /* NutritionFacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionFacts.swift; sourceTree = "<group>"; };
 		06FFCA431D78CF7100211406 /* NutritionFacts+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NutritionFacts+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		06FFCA511D78DFEB00211406 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		06FFCA511D78DFEB00211406 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		06FFCA541D797A3C00211406 /* FoodDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDataLoader.swift; sourceTree = "<group>"; };
 		06FFCA571D797CCE00211406 /* CategoryDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDataLoader.swift; sourceTree = "<group>"; };
 		06FFCA5A1D79989700211406 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 		06FFCA501D78DFDA00211406 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				06FFCA511D78DFEB00211406 /* Utils.swift */,
+				06FFCA511D78DFEB00211406 /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -368,7 +368,7 @@
 				067F1D281D77646E00ADAE0D /* Lifesum.xcdatamodeld in Sources */,
 				06FFCA4D1D78CF7100211406 /* Food.swift in Sources */,
 				06FFCA451D78CF7100211406 /* Category.swift in Sources */,
-				06FFCA521D78DFEB00211406 /* Utils.swift in Sources */,
+				06FFCA521D78DFEB00211406 /* Extensions.swift in Sources */,
 				06FFCA4A1D78CF7100211406 /* ExerciseTranslation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

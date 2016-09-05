@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// All constants related to Storyboard like segues or view controllers identifiers
 struct StoryboardConstants{
     
     static let SegueIdOpenExercises = "showExercises"

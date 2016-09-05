@@ -11,7 +11,10 @@ import UIKit
 /// Data Manager acts as a Facade design pattern to load all data from json files and persist them in DataBase (CoreData)
 class DataManager: NSObject {
 
-    
+    /**
+     Load all json data files and persis them in database. As this job is heavy, it will be executed in background and the handler will be called in main thread.
+     - Parameter handler: completion handler to be called after completion.
+     */
     class func loadAllData(handler: () -> ()){
         
         

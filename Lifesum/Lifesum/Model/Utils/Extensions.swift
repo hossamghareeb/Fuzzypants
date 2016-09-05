@@ -9,7 +9,7 @@
 import UIKit
 
 extension NSLocale{
-    
+    /// Get the current system language ISO code. like en, es,...
     var languageISO: String{
         get{
             let currentLanguage = NSLocale.preferredLanguages().first

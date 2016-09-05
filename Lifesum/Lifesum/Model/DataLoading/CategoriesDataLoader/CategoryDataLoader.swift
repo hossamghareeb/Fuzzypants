@@ -62,4 +62,8 @@ class CategoryDataLoader: AbstractDataLoader {
     override func entityName() -> String {
         return "Category"
     }
+    
+    override func dataLoadedKey() -> String {
+        return "CategoriesData"
+    }
 }

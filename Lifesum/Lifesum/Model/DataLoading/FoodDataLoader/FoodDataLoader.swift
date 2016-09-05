@@ -14,6 +14,10 @@ class FoodDataLoader: AbstractDataLoader {
         return "foodStatic.json"
     }
     
+    override func dataLoadedKey() -> String {
+        return "FoodsData"
+    }
+    
     override func parseJsonData(json: AnyObject){
         let foods = json as! [[String: AnyObject]]
         

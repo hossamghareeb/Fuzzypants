@@ -8,6 +8,9 @@
 
 import UIKit
 import CoreData
+
+
+/// Exercies Data manager classes
 class ExercisesDataLoader: AbstractDataLoader {
 
     override func jsonFileName() -> String {
@@ -21,6 +24,7 @@ class ExercisesDataLoader: AbstractDataLoader {
         }
     }
     
+    /// Start parsing exercie object from json. The function parse the json dictionary to an Exercise object and save it in coredata.
     func parseExerciseObject(json: [String: AnyObject]){
         
         let title = json.stringWithKey("title")
@@ -62,6 +66,13 @@ class ExercisesDataLoader: AbstractDataLoader {
         return "Exercise"
     }
     
+    override func dataLoadedKey() -> String {
+        return "ExerciesData"
+    }
+    
+    /// Get all exercies that their titles match the given keyword
+    /// - Parameter keyword: The keyword used to filter exercises with. 
+    /// - Returns: array af all exercises that matches the given keyword.
     func exercisesWithKeyword(keyword: String) -> [AnyObject] {
         
         let code = NSLocale.currentLocale().languageISO
