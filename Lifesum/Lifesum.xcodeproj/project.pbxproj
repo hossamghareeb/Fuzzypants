@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0602E6CB1D7DE1C900DF9725 /* FoodDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0602E6CA1D7DE1C900DF9725 /* FoodDetailsViewController.swift */; };
 		067F1D201D77646E00ADAE0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067F1D1F1D77646E00ADAE0D /* AppDelegate.swift */; };
 		067F1D251D77646E00ADAE0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 067F1D231D77646E00ADAE0D /* Main.storyboard */; };
 		067F1D281D77646E00ADAE0D /* Lifesum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 067F1D261D77646E00ADAE0D /* Lifesum.xcdatamodeld */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0602E6CA1D7DE1C900DF9725 /* FoodDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDetailsViewController.swift; sourceTree = "<group>"; };
 		067F1D1C1D77646E00ADAE0D /* Lifesum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lifesum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		067F1D1F1D77646E00ADAE0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		067F1D241D77646E00ADAE0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0602E6C91D7DE1BA00DF9725 /* FoodDetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0602E6CA1D7DE1C900DF9725 /* FoodDetailsViewController.swift */,
+			);
+			path = FoodDetailsViewController;
+			sourceTree = "<group>";
+		};
 		067F1D131D77646E00ADAE0D = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +150,7 @@
 		067F1D3B1D77770200ADAE0D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0602E6C91D7DE1BA00DF9725 /* FoodDetailsViewController */,
 				06FC587B1D7CBA2600910AF9 /* FoodsViewController */,
 				06FC58741D7CA66100910AF9 /* FoodCategoriesViewController */,
 				06FFCA5C1D79A06000211406 /* ExercisesViewController */,
@@ -353,6 +364,7 @@
 				067F1D441D783FD300ADAE0D /* ExercisesDataLoader.swift in Sources */,
 				06FFCA471D78CF7100211406 /* Exercise+CoreDataProperties.swift in Sources */,
 				06FC587D1D7CBA3900910AF9 /* FoodsViewController.swift in Sources */,
+				0602E6CB1D7DE1C900DF9725 /* FoodDetailsViewController.swift in Sources */,
 				067F1D281D77646E00ADAE0D /* Lifesum.xcdatamodeld in Sources */,
 				06FFCA4D1D78CF7100211406 /* Food.swift in Sources */,
 				06FFCA451D78CF7100211406 /* Category.swift in Sources */,

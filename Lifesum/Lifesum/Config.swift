@@ -13,4 +13,5 @@ struct StoryboardConstants{
     static let SegueIdOpenExercises = "showExercises"
     static let SegueIdOpenFoodCategories = "showCategories"
     static let SegueIdOpenFoods = "showFoods"
+    static let SegueIdOpenFoodDetails = "showFoodDetails"
 }

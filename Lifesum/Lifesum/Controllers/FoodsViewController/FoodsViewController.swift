@@ -9,7 +9,8 @@
 import UIKit
 
 class FoodsViewController: UIViewController {
-
+    
+    @IBOutlet weak var foodsTableView: UITableView!
     var selectedCategory: Category?
     
     lazy var foods: [Food] = {
@@ -23,6 +24,18 @@ class FoodsViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = self.selectedCategory?.title
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == StoryboardConstants.SegueIdOpenFoodDetails{
+            
+            let foodDetailsViewController = segue.destinationViewController as! FoodDetailsViewController
+            if let indexPath = self.foodsTableView.indexPathForSelectedRow{
+                let food = self.foods[indexPath.row]
+                foodDetailsViewController.selectedFood = food
+            }
+            
+        }
     }
 }
 
